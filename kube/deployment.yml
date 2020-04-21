@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: remsterremstravafrontend 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: remsterremstravafrontend 
+    spec:
+      containers:
+        - name: remsterremstravafrontend 
+          image: remstrava.azurecr.io/remsterremstravafrontend
+          ports:
+          - containerPort: 80
