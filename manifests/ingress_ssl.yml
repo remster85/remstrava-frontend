@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: remstravafrontend-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  tls:
+    - hosts:
+      - remstrava.westus.cloudapp.azure.com # IMPORTANT: update <ingress ip> with the dashed public IP of your ingress, for example frontend.13-68-177-68.nip.io
+      secretName: remstrava-westus-frontend-cert
+  rules:
+  - host: remstrava.westus.cloudapp.azure.com # IMPORTANT: update <ingress ip> with the dashed public IP of your ingress, for example frontend.13-68-177-68.nip.io
+    http:
+      paths:
+      - backend:
+          serviceName: remstravafrontend
+          servicePort: 80
+        path: /
