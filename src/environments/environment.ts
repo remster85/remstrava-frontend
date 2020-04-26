@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  activitiesUrl: 'https://dotnetactivitiesfromstorage20200112062751.azurewebsites.net/api/ActivitiesFromStorage'
+  activitiesUrl: 'https://remstrava-activities.azurewebsites.net/api/ActivitiesFromStorage'
 };
 
 /*
