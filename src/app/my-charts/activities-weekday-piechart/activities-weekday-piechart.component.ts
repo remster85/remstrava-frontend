@@ -23,10 +23,10 @@ export class ActivitiesPerWeekDayComponent implements OnInit {
   
   pieChartOptions: Highcharts.Options = {
    title: {
-      text: 'Number of runs per weekday'
+      text: 'Number of activities per weekday'
    },
    tooltip: {
-      pointFormat: 'Number of runs on {point.name} : {point.y}'
+      pointFormat: 'Number of activities on {point.name} : {point.y}'
   },
   plotOptions: {
     pie: {
