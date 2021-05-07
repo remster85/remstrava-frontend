@@ -4,6 +4,9 @@ metadata:
   name: remstravafrontend 
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: remstravafrontend
   template:
     metadata:
       labels:
