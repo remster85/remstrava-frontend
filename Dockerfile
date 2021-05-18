@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 # Install build dependencies via apk
 RUN apk update && apk add python g++ make && rm -rf /var/cache/apk/*
+RUN apt-get update && apt-get install curl
 
 # Install node dependencies - done in a separate step so Docker can cache it
 COPY package*.json ./

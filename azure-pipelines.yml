@@ -11,21 +11,21 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '0dbaa815-da3c-4b66-bcc7-50540a4c859c'
-  imageRepository: 'remstravafrontend'
+  dockerRegistryServiceConnection: '18fd3a4b-3ff6-4d3c-a3b4-243e3ce7b80c'
+  imageRepository: 'remsterremstravafrontend'
   containerRegistry: 'remstrava.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'remstrava1391e470-auth'
+  imagePullSecret: 'remstrava744352d0-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
-  
+
 
 stages:
 - stage: Build
   displayName: Build stage
-  jobs:  
+  jobs:
   - job: Build
     displayName: Build
     pool:
@@ -40,7 +40,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-          
+
     - upload: manifests
       artifact: manifests
 
@@ -53,7 +53,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'remster85remstravafrontend-1496.remstrava-frontend'
+    environment: 'remster85remstravafrontend-1559.remstrava'
     strategy:
       runOnce:
         deploy:
@@ -64,7 +64,7 @@ stages:
               action: createSecret
               secretName: $(imagePullSecret)
               dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
-              
+
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
             inputs:
