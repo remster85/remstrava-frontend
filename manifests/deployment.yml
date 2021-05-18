@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: remstravafrontend 
-          image: remstrava.azurecr.io/remstravafrontend:11
+          image: remstrava.azurecr.io/remstravafrontend:121
           ports:
           - containerPort: 8080
