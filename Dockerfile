@@ -21,5 +21,5 @@ EXPOSE 8080
 EXPOSE 4200
 
 # Set the startup command to 'npm start'
-CMD ["ng","serve","--host", "0.0.0.0"]
+CMD ["ng","serve","--host", "0.0.0.0","--disable-host-check"]
 
