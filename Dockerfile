@@ -3,6 +3,8 @@ FROM node:13.5-alpine
 
 # Install build dependencies via apk
 RUN apk update && apk add python g++ make && rm -rf /var/cache/apk/*
+#install curl
+RUN apk update && apk add curl
 
 WORKDIR /app
 
