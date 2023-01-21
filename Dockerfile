@@ -1,5 +1,5 @@
 ### STAGE 1: Build ####
-FROM node:18-alpine
+FROM node:17-alpine
 
 # Install build dependencies via apk
 RUN apk update && apk add python g++ make && rm -rf /var/cache/apk/*
