@@ -2,9 +2,9 @@
 FROM node:17-alpine
 
 # Install build dependencies via apk
-RUN apk update && apk add python g++ make && rm -rf /var/cache/apk/*
+# apk update && apk add python g++ make && rm -rf /var/cache/apk/*
 #install curl
-RUN apk update && apk add curl
+#RUN apk update && apk add curl
 
 WORKDIR /app
 
